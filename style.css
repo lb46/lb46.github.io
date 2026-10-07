@@ -311,6 +311,7 @@ button {
 
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 
   border: 1px solid var(--line);
   border-radius: 4px;
@@ -340,7 +341,7 @@ button {
 /* ---------- Profile ---------- */
 
 .profile-label {
-  margin: 0 0 6px;
+  margin: 0 0 12px;
 
   color: var(--text-muted);
 
