@@ -141,10 +141,11 @@ button {
   width: 42px;
   height: 42px;
 
-  font-size: 36px;
+  font-size: 28px;
   line-height: 1;
 
   transition: opacity 0.2s ease;
+  transform: scale(1.35);
 }
 
 .nav-logo:hover {
