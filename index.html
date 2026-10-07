@@ -1,75 +1,664 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Cleo — SEO / GEO Specialist</title>
 
   <meta
     name="description"
     content="Cleo（陈雯静），SEO / GEO Specialist，专注 Google SEO、内容策略、GEO 与搜索增长。"
-  />
+  >
 
   <meta
     name="keywords"
     content="Cleo, 陈雯静, SEO, GEO, Google SEO, SEO运营, 海外SEO, SEO Specialist"
-  />
+  >
 
-  <meta name="author" content="Cleo" />
+  <meta name="author" content="Cleo">
 
-  <meta property="og:title" content="Cleo — SEO / GEO Specialist" />
+  <meta property="og:title" content="Cleo — SEO / GEO Specialist">
   <meta
     property="og:description"
-    content="Cleo（陈雯静）的个人 Portfolio，专注 Google SEO、GEO、内容策略与搜索增长。"
-  />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://lb46.github.io/" />
+    content="Cleo（陈雯静），SEO / GEO Specialist，专注 Google SEO、内容策略、GEO 与搜索增长。"
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lb46.github.io/">
 
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Cleo — SEO / GEO Specialist" />
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Cleo — SEO / GEO Specialist">
   <meta
     name="twitter:description"
-    content="Cleo（陈雯静），SEO / GEO Specialist。"
-  />
+    content="Cleo（陈雯静），SEO / GEO Specialist，专注 Google SEO、内容策略、GEO 与搜索增长。"
+  >
 
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-soft: #f6f6f4;
+      --text: #111111;
+      --text-secondary: #555555;
+      --text-muted: #888888;
+      --line: #e5e5e5;
+      --card: #fafafa;
+      --accent: #111111;
+
+      --font:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "SF Pro Text",
+        "Helvetica Neue",
+        "PingFang SC",
+        "Hiragino Sans GB",
+        "Microsoft YaHei",
+        Arial,
+        sans-serif;
+    }
+
+    [data-theme="dark"] {
+      --bg: #111111;
+      --bg-soft: #191919;
+      --text: #f5f5f5;
+      --text-secondary: #b5b5b5;
+      --text-muted: #777777;
+      --line: #2c2c2c;
+      --card: #181818;
+      --accent: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      transition:
+        background 0.25s ease,
+        color 0.25s ease;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    /* Navigation */
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 72px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    [data-theme="dark"] .nav {
+      background: rgba(17, 17, 17, 0.88);
+    }
+
+    .nav-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      font-size: 13px;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .theme-toggle {
+      border: 0;
+      background: transparent;
+      color: var(--text);
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 16px;
+      padding: 6px;
+    }
+
+    /* Hero */
+
+    .hero {
+      min-height: 720px;
+      display: flex;
+      align-items: center;
+      padding: 100px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      margin-bottom: 22px;
+      color: var(--text-muted);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+    }
+
+    .hero h1 {
+      font-size: clamp(80px, 13vw, 170px);
+      line-height: 0.85;
+      letter-spacing: -0.075em;
+      font-weight: 700;
+    }
+
+    .hero-name {
+      margin-top: 18px;
+      color: var(--text-muted);
+      font-size: 18px;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-line {
+      width: 56px;
+      height: 1px;
+      margin: 28px 0;
+      background: var(--text);
+    }
+
+    .hero-title {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-description {
+      max-width: 560px;
+      margin-top: 18px;
+      color: var(--text-secondary);
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    .hero-status {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 32px;
+      color: var(--text-muted);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #36a269;
+    }
+
+    .hero-card {
+      padding: 34px;
+      border: 1px solid var(--line);
+      background: var(--card);
+    }
+
+    .profile-label {
+      color: var(--text-muted);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+    }
+
+    .profile-year {
+      margin-top: 8px;
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    .profile-avatar {
+      width: 100px;
+      height: 100px;
+      margin: 60px 0 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--text);
+      color: var(--bg);
+      font-size: 42px;
+      font-weight: 600;
+      letter-spacing: -0.06em;
+    }
+
+    .profile-name {
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+    }
+
+    .profile-role {
+      margin-top: 5px;
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+
+    .profile-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 24px;
+    }
+
+    .profile-tag {
+      padding: 5px 10px;
+      border: 1px solid var(--line);
+      color: var(--text-secondary);
+      font-size: 11px;
+    }
+
+    /* Sections */
+
+    .section {
+      padding: 120px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-label {
+      margin-bottom: 50px;
+      color: var(--text-muted);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.65fr 1.35fr;
+      gap: 80px;
+    }
+
+    .about-title {
+      font-size: 38px;
+      line-height: 1.2;
+      letter-spacing: -0.045em;
+      font-weight: 600;
+    }
+
+    .about-text {
+      max-width: 700px;
+      color: var(--text-secondary);
+      font-size: 16px;
+      line-height: 2;
+    }
+
+    /* Results */
+
+    .results-section {
+      background: var(--bg-soft);
+      border-top: 0;
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+    }
+
+    .result-number {
+      font-size: 48px;
+      line-height: 1;
+      font-weight: 600;
+      letter-spacing: -0.05em;
+    }
+
+    .result-label {
+      margin-top: 12px;
+      color: var(--text-secondary);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    /* Experience */
+
+    .experience-item {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 60px;
+      padding: 42px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .experience-item:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .experience-date {
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    .experience-company {
+      margin-top: 8px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .experience-role {
+      margin-top: 3px;
+      color: var(--text-secondary);
+      font-size: 13px;
+    }
+
+    .experience-content h3 {
+      margin-bottom: 22px;
+      font-size: 24px;
+      line-height: 1.3;
+      letter-spacing: -0.03em;
+    }
+
+    .experience-content ul {
+      padding-left: 18px;
+      color: var(--text-secondary);
+    }
+
+    .experience-content li {
+      margin-bottom: 14px;
+      padding-left: 5px;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    /* Education */
+
+    .education-item {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 60px;
+      padding: 36px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .education-date {
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    .education-school {
+      font-size: 21px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+    }
+
+    .education-major {
+      margin-top: 6px;
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+
+    /* Skills */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 50px;
+    }
+
+    .skill-group h3 {
+      margin-bottom: 18px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .skill-group p {
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    /* Contact */
+
+    .contact-section {
+      background: var(--bg-soft);
+      border-top: 0;
+    }
+
+    .contact-content {
+      max-width: 800px;
+    }
+
+    .contact-content h2 {
+      margin-bottom: 30px;
+      font-size: clamp(54px, 9vw, 110px);
+      line-height: 0.95;
+      letter-spacing: -0.065em;
+      font-weight: 600;
+    }
+
+    .contact-link {
+      display: inline-block;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--text);
+      font-size: 18px;
+      transition: opacity 0.2s ease;
+    }
+
+    .contact-link:hover {
+      opacity: 0.55;
+    }
+
+    /* Footer */
+
+    .footer {
+      padding: 30px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 100px 0;
+      }
+
+      .hero-card {
+        max-width: 500px;
+      }
+
+      .results-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 45px 30px;
+      }
+
+      .experience-item,
+      .education-item {
+        grid-template-columns: 180px 1fr;
+        gap: 35px;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .container {
+        width: min(100% - 32px, 1180px);
+      }
+
+      .nav {
+        height: 64px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 80px 0;
+      }
+
+      .hero h1 {
+        font-size: clamp(68px, 23vw, 120px);
+      }
+
+      .hero-name {
+        font-size: 16px;
+      }
+
+      .hero-description {
+        font-size: 15px;
+      }
+
+      .hero-card {
+        padding: 28px;
+      }
+
+      .profile-avatar {
+        margin-top: 50px;
+      }
+
+      .section {
+        padding: 80px 0;
+      }
+
+      .section-label {
+        margin-bottom: 35px;
+      }
+
+      .about-title {
+        font-size: 32px;
+      }
+
+      .results-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .result-number {
+        font-size: 38px;
+      }
+
+      .experience-item,
+      .education-item {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .experience-content h3 {
+        font-size: 21px;
+      }
+
+      .experience-content li {
+        font-size: 14px;
+      }
+
+      .contact-content h2 {
+        font-size: 64px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      * {
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- Navigation -->
   <header class="nav">
-    <div class="nav-inner">
-      <a href="#top" class="nav-logo">Cleo</a>
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo">Cleo</a>
 
-      <nav class="nav-links">
-        <a href="#about">关于我</a>
-        <a href="#experience">工作经历</a>
-        <a href="#education">教育背景</a>
-        <a href="#skills">技能</a>
-        <a href="#contact">联系我</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <button
+              class="theme-toggle"
+              id="themeToggle"
+              type="button"
+              aria-label="切换深色模式"
+            >
+              ◐
+            </button>
+          </li>
+        </ul>
       </nav>
-
-      <button
-        class="theme-toggle"
-        id="themeToggle"
-        aria-label="切换深色模式"
-        type="button"
-      >
-        <span class="theme-icon">◐</span>
-      </button>
     </div>
   </header>
 
-
-  <main id="top">
+  <main>
 
     <!-- Hero -->
+
     <section class="hero">
       <div class="container hero-grid">
 
@@ -83,9 +672,7 @@
 
           <div class="hero-line"></div>
 
-          <p class="hero-title">
-            SEO · GEO
-          </p>
+          <p class="hero-title">SEO · GEO</p>
 
           <p class="hero-description">
             专注 Google SEO、内容策略与 GEO，
@@ -100,28 +687,23 @@
 
         </div>
 
-
         <div class="hero-card">
 
-          <div class="hero-card-top">
-            <span>PROFILE</span>
-            <span>2026</span>
-          </div>
+          <p class="profile-label">PROFILE</p>
 
-          <div class="hero-card-main">
-            <div class="profile-mark">C</div>
+          <p class="profile-year">2026</p>
 
-            <div>
-              <p class="profile-name">Cleo</p>
-              <p class="profile-role">SEO / GEO Specialist</p>
-            </div>
-          </div>
+          <div class="profile-avatar">C</div>
 
-          <div class="hero-card-bottom">
-            <span>SEO</span>
-            <span>GEO</span>
-            <span>CONTENT</span>
-            <span>DATA</span>
+          <p class="profile-name">Cleo</p>
+
+          <p class="profile-role">SEO / GEO Specialist</p>
+
+          <div class="profile-tags">
+            <span class="profile-tag">SEO</span>
+            <span class="profile-tag">GEO</span>
+            <span class="profile-tag">CONTENT</span>
+            <span class="profile-tag">DATA</span>
           </div>
 
         </div>
@@ -129,127 +711,108 @@
       </div>
     </section>
 
-
     <!-- About -->
-    <section class="section" id="about">
 
+    <section class="section" id="about">
       <div class="container">
 
-        <div class="section-heading">
-          <p class="section-label">ABOUT</p>
-          <h2>关于我</h2>
-        </div>
+        <p class="section-label">ABOUT</p>
 
         <div class="about-grid">
 
-          <div class="about-intro">
-            <p>
-              我是一名专注于 Google SEO 与 GEO 的海外搜索运营，
-              具备独立站 SEO 内容策略、关键词研究、内容优化、
-              数据分析及项目推进经验。
-            </p>
-          </div>
+          <h2 class="about-title">
+            用搜索理解用户，
+            用内容获得增长。
+          </h2>
 
-          <div class="about-text">
-            <p>
-              工作中长期围绕搜索意图、主题集群、内容质量与用户需求
-              搭建 SEO 内容体系，并持续通过 GSC、Ahrefs、SEMRUSH
-              等工具跟踪搜索表现。
-            </p>
-
-            <p>
-              同时关注生成式搜索的发展，将 AI 工具融入内容生产、
-              用户搜索行为分析及 GEO 策略中，持续探索品牌在
-              Google Search 与 AI Search 场景下的增长机会。
-            </p>
-          </div>
+          <p class="about-text">
+            我是 Cleo，一名 SEO / GEO Specialist，
+            主要负责 Google SEO、内容策略、GEO
+            以及搜索增长相关工作。
+            <br><br>
+            过去的工作中，我长期负责英文独立站 SEO
+            项目的内容策略与执行，熟悉关键词研究、
+            搜索意图分析、主题集群、内容优化、
+            外链建设以及数据分析。
+            <br><br>
+            同时持续探索 AI 工具、生成式搜索和
+            AI 搜索结果中的内容引用机制，
+            将 AI 融入内容生产、研究和 SEO 工作流程。
+          </p>
 
         </div>
 
       </div>
-
     </section>
 
-
     <!-- Results -->
-    <section class="section results-section">
 
+    <section class="section results-section">
       <div class="container">
 
-        <div class="section-heading">
-          <p class="section-label">RESULTS</p>
-          <h2>核心成果</h2>
-        </div>
+        <p class="section-label">RESULTS</p>
 
         <div class="results-grid">
 
-          <div class="result-card">
-            <span class="result-number">150万+</span>
-            <span class="result-label">GSC 曝光</span>
-            <p>
-              一年内推动工业零部件独立站实现
-              150万+ Google Search Console 曝光。
-            </p>
+          <div>
+            <div class="result-number">150万+</div>
+            <div class="result-label">
+              GSC 年曝光
+            </div>
           </div>
 
-          <div class="result-card">
-            <span class="result-number">9.5</span>
-            <span class="result-label">平均排名</span>
-            <p>
-              通过内容策略与持续优化，
-              项目平均关键词排名达到 9.5。
-            </p>
+          <div>
+            <div class="result-number">9.5</div>
+            <div class="result-label">
+              GSC 平均排名
+            </div>
           </div>
 
-          <div class="result-card">
-            <span class="result-number">100+</span>
-            <span class="result-label">英文内容</span>
-            <p>
-              累计产出 100+ 篇深度英文 SEO 内容，
-              单篇约 1,500–3,000 词。
-            </p>
+          <div>
+            <div class="result-number">100+</div>
+            <div class="result-label">
+              英文 SEO 博客
+            </div>
           </div>
 
-          <div class="result-card">
-            <span class="result-number">30%</span>
-            <span class="result-label">首页 / AIO</span>
-            <p>
-              新内容中约 30% 实现 Google 首页排名
-              或进入 AIO。
-            </p>
+          <div>
+            <div class="result-number">30%</div>
+            <div class="result-label">
+              内容进入 Google 首页或 AIO
+            </div>
           </div>
 
         </div>
 
       </div>
-
     </section>
 
-
     <!-- Experience -->
-    <section class="section" id="experience">
 
+    <section class="section" id="experience">
       <div class="container">
 
-        <div class="section-heading">
-          <p class="section-label">EXPERIENCE</p>
-          <h2>工作经历</h2>
-        </div>
+        <p class="section-label">EXPERIENCE</p>
 
+        <div class="experience-item">
 
-        <article class="experience-item">
+          <div>
+            <p class="experience-date">2026.4 — 2026.7</p>
 
-          <div class="experience-meta">
-            <span>2026.04 — 2026.07</span>
-            <span>海外 SEO 专员</span>
+            <p class="experience-company">
+              睿魔智能科技有限公司
+            </p>
+
+            <p class="experience-role">
+              海外 SEO 专员
+            </p>
           </div>
 
           <div class="experience-content">
 
-            <h3>睿魔智能科技有限公司</h3>
+            <h3>海外 SEO / GEO</h3>
 
             <ul>
-
               <li>
                 协同 Leader 推进一体式便携直播控台产品
                 SEO / GEO 内容策略搭建与落地，围绕核心关键词、
@@ -263,189 +826,186 @@
                 基于 AI Prompt、生成式搜索及用户搜索行为调研，
                 分析 AI 搜索结果、用户提问方式及内容引用偏好，
                 持续迭代 GEO 内容策略；推动核心内容获得主流
-                大模型引用，拓展品牌在 AI 搜索场景下的曝光
-                及内容引用入口。
+                大模型引用，拓展品牌在 AI 搜索场景下的曝光及
+                内容引用入口。
               </li>
 
               <li>
                 持续跟踪关键词排名、自然流量、用户行为、
-                Google 算法及 AI 搜索结果，通过 A/B Test 等
-                数据验证方式分析内容及页面优化方向，并根据
-                测试结果及数据反馈调整 SEO / GEO 策略。
+                Google 算法及 AI 搜索结果，通过 A/B Test
+                等数据验证方式分析内容及页面优化方向，
+                并根据测试结果及数据反馈调整 SEO / GEO 策略。
               </li>
 
               <li>
-                调研行业网站及外链资源，筛选并建联 30+ 个
-                相关网站，成功获取 2 个高质量外链；梳理并制定
-                3 套 SEO 工作 SOP，覆盖内容生产、文章发布、
-                内外链建设及内容策划，推动 SEO 工作流程标准化。
+                调研行业网站及外链资源，筛选并建联
+                30+ 个相关网站，成功获取 2 个高质量外链；
+                梳理并制定 3 套 SEO 工作 SOP，覆盖内容生产、
+                文章发布、内外链建设及内容策划，推动 SEO
+                工作流程标准化。
               </li>
-
             </ul>
 
           </div>
 
-        </article>
+        </div>
 
+        <div class="experience-item">
 
-        <article class="experience-item">
+          <div>
+            <p class="experience-date">2024.6 — 2026.3</p>
 
-          <div class="experience-meta">
-            <span>2024.06 — 2026.03</span>
-            <span>谷歌 SEO 运营助理</span>
+            <p class="experience-company">
+              广州慢慢来信息科技有限公司
+            </p>
+
+            <p class="experience-role">
+              谷歌 SEO 运营助理
+            </p>
           </div>
 
           <div class="experience-content">
 
-            <h3>广州慢慢来信息科技有限公司</h3>
+            <h3>Google SEO 运营</h3>
 
             <ul>
-
               <li>
-                主导工业零部件独立站 SEO 内容策略搭建与执行，
-                针对 SEO 基础薄弱项目开展关键词调研、搜索意图分析
-                及主题集群规划，搭建内容架构；一年内实现 GSC
-                150 万+ 曝光、平均排名 9.5，询盘量持续逐月增长。
+                主导工业零部件独立站 SEO 内容策略搭建及执行，
+                针对 SEO 基础薄弱项目开展关键词调研、
+                搜索意图分析及主题集群规划，搭建内容架构；
+                一年内实现 GSC 150 万+ 曝光、平均排名 9.5，
+                询盘量持续逐月增长。
               </li>
 
               <li>
-                利用 AI 辅助规模化生产深度行业内容，累计产出
-                100+ 篇 1,500–3,000 词英文博客，并持续优化
-                历史内容、TDK 及转化型页面；内容获得主流大模型引用，
-                成功转化多笔来自 ChatGPT 引荐的精准询盘。
+                利用 AI 辅助规模化生产深度行业内容，
+                累计产出 100+ 篇 1,500–3,000 词英文博客，
+                并持续优化历史内容、TDK 及转化型页面；
+                内容获得主流大模型引用，成功转化多笔
+                来自 ChatGPT 引荐的精准询盘。
               </li>
 
               <li>
-                持续监测关键词排名、用户访问行为及 Google 核心算法变化，
-                根据数据反馈动态调整内容及 SEO 优化策略，
-                在提升搜索表现的同时兼顾用户体验与页面转化。
+                持续监测关键词排名、用户访问行为及 Google
+                核心算法变化，根据数据反馈动态调整内容及
+                SEO 优化策略，在提升搜索表现的同时兼顾
+                用户体验与页面转化。
               </li>
 
               <li>
-                负责 3 个 SEO 运营项目的推进及交付，超额完成
-                合同约定的 Top 20、Top100 关键词及外链等核心 KPI；
-                同时负责甲方日常数据答疑及独立站常规技术问题处理。
+                负责 3 个 SEO 运营项目的推进及交付，
+                超额完成合同约定的 Top 20、Top 100 关键词
+                及外链等核心 KPI；同时负责甲方日常数据答疑
+                及独立站常规技术问题处理。
               </li>
-
             </ul>
 
           </div>
 
-        </article>
+        </div>
 
       </div>
-
     </section>
 
-
     <!-- Education -->
-    <section class="section" id="education">
 
+    <section class="section">
       <div class="container">
 
-        <div class="section-heading">
-          <p class="section-label">EDUCATION</p>
-          <h2>教育背景</h2>
-        </div>
+        <p class="section-label">EDUCATION</p>
 
         <div class="education-item">
 
-          <div class="education-date">
-            2020.09 — 2024.06
-          </div>
+          <p class="education-date">
+            2020.9 — 2024.6
+          </p>
 
           <div>
-            <h3>广州商学院</h3>
-            <p>英语专业</p>
+            <p class="education-school">
+              广州商学院
+            </p>
+
+            <p class="education-major">
+              英语专业
+            </p>
           </div>
 
         </div>
 
       </div>
-
     </section>
 
-
     <!-- Skills -->
-    <section class="section" id="skills">
 
+    <section class="section" id="skills">
       <div class="container">
 
-        <div class="section-heading">
-          <p class="section-label">SKILLS</p>
-          <h2>技能 & 证书</h2>
-        </div>
+        <p class="section-label">SKILLS</p>
 
         <div class="skills-grid">
 
-          <div class="skill-block">
-
-            <h3>工具</h3>
-
-            <div class="tags">
-              <span>Google Search Console</span>
-              <span>Ahrefs</span>
-              <span>SEMRUSH</span>
-              <span>WordPress</span>
-              <span>Elementor</span>
-              <span>AI Tools</span>
-            </div>
-
+          <div class="skill-group">
+            <h3>SEO Tools</h3>
+            <p>
+              GSC、Ahrefs、SEMRUSH、
+              WordPress、Elementor
+            </p>
           </div>
 
-
-          <div class="skill-block">
-
-            <h3>能力</h3>
-
+          <div class="skill-group">
+            <h3>AI & Research</h3>
             <p>
-              信息判断和搜集能力强，经常活跃于海外主流社媒平台，
-              熟悉地道英语表达与互联网流行文化，善于分析用户行为。
+              AI 工具、AI Prompt、生成式搜索、
+              用户搜索行为分析、内容研究
             </p>
+          </div>
 
+          <div class="skill-group">
+            <h3>Language & Certificates</h3>
             <p>
+              大学英语六级、英语专业八级、
+              计算机一级、初中英语教资
+              <br><br>
               英语可作为工作语言，日常口语流利。
             </p>
-
           </div>
 
+        </div>
 
-          <div class="skill-block">
+        <div class="skills-grid" style="margin-top: 50px;">
 
-            <h3>证书</h3>
+          <div class="skill-group">
+            <h3>English</h3>
+            <p>
+              熟悉地道英语表达与互联网流行文化，
+              经常活跃于海外主流社媒平台。
+            </p>
+          </div>
 
-            <div class="certificate-list">
+          <div class="skill-group">
+            <h3>User Insight</h3>
+            <p>
+              信息判断和搜集能力强，
+              善于通过搜索行为和数据分析用户需求。
+            </p>
+          </div>
 
-              <div>
-                <span>大学英语六级</span>
-              </div>
-
-              <div>
-                <span>英语专业八级</span>
-              </div>
-
-              <div>
-                <span>计算机一级</span>
-              </div>
-
-              <div>
-                <span>初中英语教师资格证</span>
-              </div>
-
-            </div>
-
+          <div class="skill-group">
+            <h3>Workflow</h3>
+            <p>
+              将 AI 工具融入日常 SEO 工作流，
+              持续提升内容研究与生产效率。
+            </p>
           </div>
 
         </div>
 
       </div>
-
     </section>
 
-
     <!-- Contact -->
-    <section class="section contact-section" id="contact">
 
+    <section class="section contact-section" id="contact">
       <div class="container">
 
         <div class="contact-content">
@@ -454,40 +1014,29 @@
 
           <h2>Let's connect.</h2>
 
-          <p>
-            如果你正在寻找 SEO / GEO 方向的人才，
-            欢迎与我联系。
-          </p>
-
           <a
-            href="mailto:你的邮箱@example.com"
+            href="mailto:logbox46@gmail.com"
             class="contact-link"
           >
-            你的邮箱@example.com
+            logbox46@gmail.com
           </a>
 
         </div>
 
       </div>
-
     </section>
 
   </main>
 
-
-  <!-- Footer -->
   <footer class="footer">
-
     <div class="container footer-inner">
 
-      <span>© 2026 Cleo</span>
+      <span>Cleo · SEO / GEO Specialist</span>
 
-      <span>SEO · GEO</span>
+      <span>© 2026</span>
 
     </div>
-
   </footer>
-
 
   <script>
     const themeToggle = document.getElementById("themeToggle");
@@ -498,7 +1047,7 @@
       document.documentElement.setAttribute("data-theme", "dark");
     }
 
-    themeToggle.addEventListener("click", () => {
+    themeToggle.addEventListener("click", function () {
       const currentTheme =
         document.documentElement.getAttribute("data-theme");
 
