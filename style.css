@@ -138,10 +138,10 @@ button {
   align-items: center;
   justify-content: center;
 
-  width: 30px;
-  height: 30px;
+  width: 34px;
+  height: 34px;
 
-  font-size: 23px;
+  font-size: 28px;
   line-height: 1;
 
   transition: opacity 0.2s ease;
