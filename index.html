@@ -118,12 +118,13 @@
       background: rgba(17, 17, 17, 0.88);
     }
 
-    .nav-inner {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+.nav-inner {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
     .nav-logo {
   display: flex;
@@ -147,12 +148,17 @@
   object-fit: contain;
 }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      list-style: none;
-    }
+.nav-links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 28px;
+
+  list-style: none;
+}
 
     .nav-links a {
       color: var(--text-secondary);
@@ -218,14 +224,6 @@
       align-items: center;
     }
 
-    .eyebrow {
-      margin-bottom: 22px;
-      color: var(--text-muted);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-    }
-
     .hero h1 {
       font-size: clamp(80px, 13vw, 170px);
       line-height: 0.85;
@@ -246,11 +244,6 @@
   margin: 6px 0 28px;
   background: var(--text-muted);
 }
-    .hero-title {
-      font-size: 22px;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-    }
 
     .hero-description {
       max-width: 560px;
@@ -258,24 +251,6 @@
       color: var(--text-secondary);
       font-size: 16px;
       line-height: 1.9;
-    }
-
-    .hero-status {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      margin-top: 32px;
-      color: var(--text-muted);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-    }
-
-    .status-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #36a269;
     }
 
     .hero-card {
@@ -297,20 +272,20 @@
       font-size: 12px;
     }
 
-    .profile-avatar {
-      width: 100px;
-      height: 100px;
-      margin: 45px 0 28px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: var(--text);
-      color: var(--bg);
-      font-size: 42px;
-      font-weight: 600;
-      letter-spacing: -0.06em;
-    }
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  margin: 32px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--text);
+  color: var(--bg);
+  font-size: 42px;
+  font-weight: 600;
+  letter-spacing: -0.06em;
+}
 
     .profile-name {
       font-size: 24px;
@@ -345,13 +320,13 @@
       border-top: 1px solid var(--line);
     }
 
-    .section-label {
-      margin-bottom: 50px;
-      color: var(--text-muted);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-    }
+.section-label {
+  margin-bottom: 50px;
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
 
     .about-grid {
       display: grid;
@@ -380,11 +355,16 @@
       border-top: 0;
     }
 
-    .results-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 40px;
-    }
+.experience-section {
+  background: var(--bg-soft);
+}
+    
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  text-align: center;
+}
 
     .result-number {
       font-size: 48px;
@@ -644,9 +624,6 @@
         padding: 28px;
       }
 
-      .profile-avatar {
-        margin-top: 50px;
-      }
 
       .section {
         padding: 80px 0;
@@ -738,8 +715,6 @@
 
         <div class="hero-content">
 
-          <p class="eyebrow">SEO / GEO SPECIALIST</p>
-
           <h1>Cleo</h1>
 
           <p class="hero-name">陈雯静</p>
@@ -751,11 +726,6 @@
             擅长通过数据、AI 工具和搜索意图分析，
             提升自然搜索表现与品牌曝光。
           </p>
-
-          <div class="hero-status">
-            <span class="status-dot"></span>
-            <span>OPEN TO OPPORTUNITIES</span>
-          </div>
 
         </div>
 
@@ -781,7 +751,7 @@
     <section class="section" id="about">
       <div class="container">
 
-        <p class="section-label">ABOUT</p>
+        <p class="section-label">🧭 ABOUT</p>
 
         <div class="about-grid">
 
@@ -806,54 +776,13 @@
       </div>
     </section>
 
-    <!-- Results -->
-
-    <section class="section results-section">
-      <div class="container">
-
-        <p class="section-label">RESULTS</p>
-
-        <div class="results-grid">
-
-          <div>
-            <div class="result-number">150万+</div>
-            <div class="result-label">
-              GSC 年曝光
-            </div>
-          </div>
-
-          <div>
-            <div class="result-number">9.5</div>
-            <div class="result-label">
-              网页 GSC 平均排名
-            </div>
-          </div>
-
-          <div>
-            <div class="result-number">100+</div>
-            <div class="result-label">
-              创作英文 SEO 博客
-            </div>
-          </div>
-
-          <div>
-            <div class="result-number">30%</div>
-            <div class="result-label">
-              内容进入 Google 首页或 AIO
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
 
     <!-- Experience -->
 
-    <section class="section" id="experience">
+    <section class="section experience-section" id="experience">
       <div class="container">
 
-        <p class="section-label">EXPERIENCE</p>
+        <p class="section-label">💼 EXPERIENCE</p>
 
         <div class="experience-item">
 
@@ -932,12 +861,54 @@
       </div>
     </section>
 
+        <!-- Results -->
+
+    <section class="section results-section">
+      <div class="container">
+
+        <p class="section-label">📈 RESULTS</p>
+
+        <div class="results-grid">
+
+          <div>
+            <div class="result-number">150万+</div>
+            <div class="result-label">
+              GSC 年曝光
+            </div>
+          </div>
+
+          <div>
+            <div class="result-number">9.5</div>
+            <div class="result-label">
+              网页 GSC 平均排名
+            </div>
+          </div>
+
+          <div>
+            <div class="result-number">100+</div>
+            <div class="result-label">
+              创作英文 SEO 博客
+            </div>
+          </div>
+
+          <div>
+            <div class="result-number">30%</div>
+            <div class="result-label">
+              内容进入 Google 首页或 AIO
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
     <!-- Education -->
 
     <section class="section">
       <div class="container">
 
-        <p class="section-label">EDUCATION</p>
+        <p class="section-label">🎓 EDUCATION</p>
 
 <div class="education-item">
 
@@ -969,7 +940,7 @@
 <section class="section" id="skills">
   <div class="container">
 
-    <p class="section-label">SKILLS</p>
+    <p class="section-label">🛠️ SKILLS</p>
 
     <div class="skills-grid">
 
