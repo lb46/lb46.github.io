@@ -1,0 +1,573 @@
+/* =========================
+   基础设置
+========================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
+    sans-serif;
+
+  background: #ffffff;
+  color: #171717;
+  line-height: 1.8;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+
+/* =========================
+   导航栏
+========================= */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: auto;
+
+  height: 68px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 30px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 28px;
+
+  font-size: 14px;
+  color: #666666;
+}
+
+.navbar nav a {
+  transition: color 0.2s ease;
+}
+
+.navbar nav a:hover {
+  color: #000000;
+}
+
+
+/* =========================
+   Hero
+========================= */
+
+.hero {
+  max-width: 1100px;
+  margin: auto;
+
+  min-height: 620px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 100px 30px;
+}
+
+.hero-content {
+  max-width: 760px;
+}
+
+.eyebrow {
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: #777777;
+
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-size: clamp(52px, 8vw, 92px);
+
+  line-height: 1.05;
+
+  letter-spacing: -4px;
+
+  margin-bottom: 20px;
+}
+
+.hero h2 {
+  font-size: 25px;
+  font-weight: 500;
+
+  color: #555555;
+
+  margin-bottom: 28px;
+}
+
+.hero-description {
+  max-width: 620px;
+
+  font-size: 18px;
+  color: #666666;
+}
+
+.hero-links {
+  display: flex;
+  gap: 25px;
+
+  margin-top: 40px;
+}
+
+.hero-links a {
+  font-size: 14px;
+  font-weight: 600;
+
+  border-bottom: 1px solid #222222;
+
+  padding-bottom: 4px;
+}
+
+
+/* =========================
+   Section
+========================= */
+
+.section {
+  max-width: 1100px;
+  margin: auto;
+
+  padding: 110px 30px;
+
+  border-top: 1px solid #eeeeee;
+}
+
+.section-title {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+
+  margin-bottom: 55px;
+}
+
+.section-title span {
+  font-family: monospace;
+
+  font-size: 13px;
+
+  color: #999999;
+}
+
+.section-title h2 {
+  font-size: 28px;
+
+  letter-spacing: -1px;
+}
+
+
+/* =========================
+   About
+========================= */
+
+.about-content {
+  max-width: 780px;
+
+  font-size: 17px;
+
+  color: #555555;
+}
+
+.about-content p {
+  margin-bottom: 22px;
+}
+
+
+/* =========================
+   核心成果
+========================= */
+
+.results-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 20px;
+}
+
+.result-card {
+  padding: 30px 25px;
+
+  background: #f7f7f7;
+
+  border-radius: 12px;
+}
+
+.result-card strong {
+  display: block;
+
+  font-size: 38px;
+
+  line-height: 1.2;
+
+  letter-spacing: -2px;
+
+  margin-bottom: 10px;
+}
+
+.result-card span {
+  font-size: 14px;
+
+  color: #666666;
+}
+
+
+/* =========================
+   工作经历
+========================= */
+
+.experience-item {
+  display: grid;
+
+  grid-template-columns: 180px 1fr;
+
+  gap: 50px;
+
+  padding: 50px 0;
+
+  border-top: 1px solid #eeeeee;
+}
+
+.experience-item:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.experience-meta {
+  font-size: 14px;
+
+  color: #888888;
+}
+
+.experience-content h3 {
+  font-size: 23px;
+
+  margin-bottom: 5px;
+}
+
+.position {
+  color: #777777;
+
+  margin-bottom: 25px;
+
+  font-size: 15px;
+}
+
+.experience-content ul {
+  color: #555555;
+
+  font-size: 15px;
+}
+
+.experience-content li {
+  margin-bottom: 13px;
+}
+
+
+/* =========================
+   教育
+========================= */
+
+.education-item {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 30px 0;
+
+  border-top: 1px solid #eeeeee;
+}
+
+.education-item h3 {
+  font-size: 21px;
+
+  margin-bottom: 5px;
+}
+
+.education-item p,
+.education-item > span {
+  color: #777777;
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   Skills
+========================= */
+
+.skills-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 60px 80px;
+}
+
+.skill-group h3 {
+  font-size: 17px;
+
+  margin-bottom: 18px;
+}
+
+.tags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 9px;
+}
+
+.tags span {
+  padding: 7px 13px;
+
+  background: #f5f5f5;
+
+  border-radius: 6px;
+
+  font-size: 13px;
+
+  color: #555555;
+}
+
+
+/* =========================
+   Certificates
+========================= */
+
+.certificate-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+}
+
+.certificate-list span {
+  border: 1px solid #dddddd;
+
+  padding: 10px 16px;
+
+  border-radius: 6px;
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   联系方式
+========================= */
+
+.contact-section {
+  padding-bottom: 140px;
+}
+
+.contact-content {
+  max-width: 700px;
+}
+
+.contact-content h2 {
+  font-size: 38px;
+
+  letter-spacing: -1.5px;
+
+  margin-bottom: 20px;
+}
+
+.contact-content p {
+  color: #666666;
+
+  margin-bottom: 30px;
+}
+
+.email-link {
+  display: inline-block;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  border-bottom: 1px solid #222222;
+
+  padding-bottom: 5px;
+}
+
+
+/* =========================
+   Footer
+========================= */
+
+footer {
+  max-width: 1100px;
+
+  margin: auto;
+
+  padding: 35px 30px 50px;
+
+  border-top: 1px solid #eeeeee;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  color: #999999;
+
+  font-size: 12px;
+}
+
+
+/* =========================
+   手机端
+========================= */
+
+@media (max-width: 800px) {
+
+  .navbar nav {
+    display: none;
+  }
+
+  .nav-container {
+    height: 60px;
+
+    padding: 0 20px;
+  }
+
+  .hero {
+    min-height: 550px;
+
+    padding: 80px 20px;
+  }
+
+  .hero h1 {
+    font-size: 58px;
+
+    letter-spacing: -3px;
+  }
+
+  .hero h2 {
+    font-size: 21px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .section {
+    padding: 80px 20px;
+  }
+
+  .section-title {
+    margin-bottom: 40px;
+  }
+
+  .results-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .result-card strong {
+    font-size: 30px;
+  }
+
+  .experience-item {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    padding: 40px 0;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+  .education-item {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+  .contact-content h2 {
+    font-size: 30px;
+  }
+
+  footer {
+    flex-direction: column;
+
+    gap: 8px;
+
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+
+/* =========================
+   小屏手机
+========================= */
+
+@media (max-width: 480px) {
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .result-card {
+    padding: 25px;
+  }
+
+  .section-title h2 {
+    font-size: 24px;
+  }
+
+}
