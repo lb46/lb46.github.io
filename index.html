@@ -126,19 +126,25 @@
   justify-content: space-between;
 }
 
-    .nav-logo {
+.nav-logo {
   display: flex;
   align-items: center;
   justify-content: center;
 
   width: 28px;
   height: 28px;
-
   flex: 0 0 28px;
-      
+
   font-size: 20px;
 }
 
+    .nav-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+    
 .nav-logo img {
   display: block;
   width: 28px;
@@ -149,14 +155,9 @@
 }
 
 .nav-links {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-
   display: flex;
   align-items: center;
   gap: 28px;
-
   list-style: none;
 }
 
@@ -175,8 +176,9 @@
   align-items: center;
   justify-content: center;
 
-  width: 22px;
-  height: 22px;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
 
   margin: 0;
   padding: 0;
@@ -595,13 +597,7 @@
         height: 64px;
       }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 0;
-}
-
-.nav-links li:not(:last-child) {
+.nav-center {
   display: none;
 }
       .hero {
@@ -678,31 +674,32 @@
 
 <body>
 
-  <header class="nav">
+<header class="nav">
   <div class="container nav-inner">
-  <a href="#" class="nav-logo" aria-label="Cleo">
-  📓
-  </a>
 
-    <nav>
+    <a href="#" class="nav-logo" aria-label="Cleo">
+      📓
+    </a>
+
+    <nav class="nav-center">
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li>
-<button
-  class="theme-toggle"
-  id="themeToggle"
-  type="button"
-  aria-label="切换深色模式"
->
-  <span class="moon-icon">🌙</span>
-  <span class="sun-icon">☀️</span>
-</button>
-        </li>
       </ul>
     </nav>
+
+    <button
+      class="theme-toggle"
+      id="themeToggle"
+      type="button"
+      aria-label="切换深色模式"
+    >
+      <span class="moon-icon">🌙</span>
+      <span class="sun-icon">☀️</span>
+    </button>
+
   </div>
 </header>
 
