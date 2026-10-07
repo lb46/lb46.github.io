@@ -2,1063 +2,867 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Cleo — SEO / GEO Specialist</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <meta
     name="description"
-    content="Cleo（陈雯静），SEO / GEO Specialist，专注 Google SEO、内容策略、GEO 与搜索增长。"
+    content="陈雯静｜海外 SEO / GEO 专员。专注 Google SEO、GEO、AI Search 与内容策略。"
   >
 
   <meta
     name="keywords"
-    content="Cleo, 陈雯静, SEO, GEO, Google SEO, SEO运营, 海外SEO, SEO Specialist"
+    content="陈雯静, SEO, GEO, Google SEO, AI Search, 海外SEO"
   >
 
-  <meta name="author" content="Cleo">
+  <title>陈雯静｜海外 SEO / GEO 专员</title>
 
-  <meta property="og:title" content="Cleo — SEO / GEO Specialist">
-  <meta
-    property="og:description"
-    content="Cleo（陈雯静），SEO / GEO Specialist，专注 Google SEO、内容策略、GEO 与搜索增长。"
-  >
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://lb46.github.io/">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Cleo — SEO / GEO Specialist">
-  <meta
-    name="twitter:description"
-    content="Cleo（陈雯静），SEO / GEO Specialist，专注 Google SEO、内容策略、GEO 与搜索增长。"
-  >
-
-  <style>
-    :root {
-      --bg: #ffffff;
-      --bg-soft: #f6f6f4;
-      --text: #111111;
-      --text-secondary: #555555;
-      --text-muted: #888888;
-      --line: #e5e5e5;
-      --card: #fafafa;
-      --accent: #111111;
-
-      --font:
-        -apple-system,
-        BlinkMacSystemFont,
-        "SF Pro Display",
-        "SF Pro Text",
-        "Helvetica Neue",
-        "PingFang SC",
-        "Hiragino Sans GB",
-        "Microsoft YaHei",
-        Arial,
-        sans-serif;
-    }
-
-    [data-theme="dark"] {
-      --bg: #111111;
-      --bg-soft: #191919;
-      --text: #f5f5f5;
-      --text-secondary: #b5b5b5;
-      --text-muted: #777777;
-      --line: #2c2c2c;
-      --card: #181818;
-      --accent: #ffffff;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-      transition:
-        background 0.25s ease,
-        color 0.25s ease;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(1180px, calc(100% - 48px));
-      margin: 0 auto;
-    }
-
-    /* Navigation */
-
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      height: 72px;
-      border-bottom: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-    }
-
-    [data-theme="dark"] .nav {
-      background: rgba(17, 17, 17, 0.88);
-    }
-
-    .nav-inner {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav-logo {
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--text-secondary);
-      font-size: 13px;
-      transition: color 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--text);
-    }
-
-    .theme-toggle {
-      border: 0;
-      background: transparent;
-      color: var(--text);
-      cursor: pointer;
-      font-family: inherit;
-      font-size: 16px;
-      padding: 6px;
-    }
-
-    /* Hero */
-
-    .hero {
-      min-height: 720px;
-      display: flex;
-      align-items: center;
-      padding: 100px 0;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.35fr 0.65fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      margin-bottom: 22px;
-      color: var(--text-muted);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-    }
-
-    .hero h1 {
-      font-size: clamp(80px, 13vw, 170px);
-      line-height: 0.85;
-      letter-spacing: -0.075em;
-      font-weight: 700;
-    }
-
-    .hero-name {
-      margin-top: 18px;
-      color: var(--text-muted);
-      font-size: 18px;
-      letter-spacing: 0.02em;
-    }
-
-    .hero-line {
-      width: 56px;
-      height: 1px;
-      margin: 28px 0;
-      background: var(--text);
-    }
-
-    .hero-title {
-      font-size: 22px;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-    }
-
-    .hero-description {
-      max-width: 560px;
-      margin-top: 18px;
-      color: var(--text-secondary);
-      font-size: 16px;
-      line-height: 1.9;
-    }
-
-    .hero-status {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      margin-top: 32px;
-      color: var(--text-muted);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-    }
-
-    .status-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #36a269;
-    }
-
-    .hero-card {
-      padding: 34px;
-      border: 1px solid var(--line);
-      background: var(--card);
-    }
-
-    .profile-label {
-      color: var(--text-muted);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-    }
-
-    .profile-year {
-      margin-top: 8px;
-      color: var(--text-muted);
-      font-size: 12px;
-    }
-
-    .profile-avatar {
-      width: 100px;
-      height: 100px;
-      margin: 60px 0 28px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: var(--text);
-      color: var(--bg);
-      font-size: 42px;
-      font-weight: 600;
-      letter-spacing: -0.06em;
-    }
-
-    .profile-name {
-      font-size: 24px;
-      font-weight: 600;
-      letter-spacing: -0.03em;
-    }
-
-    .profile-role {
-      margin-top: 5px;
-      color: var(--text-secondary);
-      font-size: 14px;
-    }
-
-    .profile-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 24px;
-    }
-
-    .profile-tag {
-      padding: 5px 10px;
-      border: 1px solid var(--line);
-      color: var(--text-secondary);
-      font-size: 11px;
-    }
-
-    /* Sections */
-
-    .section {
-      padding: 120px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .section-label {
-      margin-bottom: 50px;
-      color: var(--text-muted);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 0.65fr 1.35fr;
-      gap: 80px;
-    }
-
-    .about-title {
-      font-size: 38px;
-      line-height: 1.2;
-      letter-spacing: -0.045em;
-      font-weight: 600;
-    }
-
-    .about-text {
-      max-width: 700px;
-      color: var(--text-secondary);
-      font-size: 16px;
-      line-height: 2;
-    }
-
-    /* Results */
-
-    .results-section {
-      background: var(--bg-soft);
-      border-top: 0;
-    }
-
-    .results-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 40px;
-    }
-
-    .result-number {
-      font-size: 48px;
-      line-height: 1;
-      font-weight: 600;
-      letter-spacing: -0.05em;
-    }
-
-    .result-label {
-      margin-top: 12px;
-      color: var(--text-secondary);
-      font-size: 13px;
-      line-height: 1.6;
-    }
-
-    /* Experience */
-
-    .experience-item {
-      display: grid;
-      grid-template-columns: 250px 1fr;
-      gap: 60px;
-      padding: 42px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .experience-item:first-child {
-      border-top: 0;
-      padding-top: 0;
-    }
-
-    .experience-date {
-      color: var(--text-muted);
-      font-size: 13px;
-    }
-
-    .experience-company {
-      margin-top: 8px;
-      font-size: 15px;
-      font-weight: 600;
-    }
-
-    .experience-role {
-      margin-top: 3px;
-      color: var(--text-secondary);
-      font-size: 13px;
-    }
-
-    .experience-content h3 {
-      margin-bottom: 22px;
-      font-size: 24px;
-      line-height: 1.3;
-      letter-spacing: -0.03em;
-    }
-
-    .experience-content ul {
-      padding-left: 18px;
-      color: var(--text-secondary);
-    }
-
-    .experience-content li {
-      margin-bottom: 14px;
-      padding-left: 5px;
-      font-size: 15px;
-      line-height: 1.9;
-    }
-
-    /* Education */
-
-    .education-item {
-      display: grid;
-      grid-template-columns: 250px 1fr;
-      gap: 60px;
-      padding: 36px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .education-date {
-      color: var(--text-muted);
-      font-size: 13px;
-    }
-
-    .education-school {
-      font-size: 21px;
-      font-weight: 600;
-      letter-spacing: -0.03em;
-    }
-
-    .education-major {
-      margin-top: 6px;
-      color: var(--text-secondary);
-      font-size: 14px;
-    }
-
-    /* Skills */
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 50px;
-    }
-
-    .skill-group h3 {
-      margin-bottom: 18px;
-      font-size: 16px;
-      font-weight: 600;
-    }
-
-    .skill-group p {
-      color: var(--text-secondary);
-      font-size: 14px;
-      line-height: 1.9;
-    }
-
-    /* Contact */
-
-    .contact-section {
-      background: var(--bg-soft);
-      border-top: 0;
-    }
-
-    .contact-content {
-      max-width: 800px;
-    }
-
-    .contact-content h2 {
-      margin-bottom: 30px;
-      font-size: clamp(54px, 9vw, 110px);
-      line-height: 0.95;
-      letter-spacing: -0.065em;
-      font-weight: 600;
-    }
-
-    .contact-link {
-      display: inline-block;
-      padding-bottom: 6px;
-      border-bottom: 1px solid var(--text);
-      font-size: 18px;
-      transition: opacity 0.2s ease;
-    }
-
-    .contact-link:hover {
-      opacity: 0.55;
-    }
-
-    /* Footer */
-
-    .footer {
-      padding: 30px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      color: var(--text-muted);
-      font-size: 12px;
-    }
-
-    /* Responsive */
-
-    @media (max-width: 900px) {
-      .hero-grid,
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 60px;
-      }
-
-      .hero {
-        min-height: auto;
-        padding: 100px 0;
-      }
-
-      .hero-card {
-        max-width: 500px;
-      }
-
-      .results-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 45px 30px;
-      }
-
-      .experience-item,
-      .education-item {
-        grid-template-columns: 180px 1fr;
-        gap: 35px;
-      }
-
-      .skills-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
-      }
-    }
-
-    @media (max-width: 650px) {
-      .container {
-        width: min(100% - 32px, 1180px);
-      }
-
-      .nav {
-        height: 64px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        padding: 80px 0;
-      }
-
-      .hero h1 {
-        font-size: clamp(68px, 23vw, 120px);
-      }
-
-      .hero-name {
-        font-size: 16px;
-      }
-
-      .hero-description {
-        font-size: 15px;
-      }
-
-      .hero-card {
-        padding: 28px;
-      }
-
-      .profile-avatar {
-        margin-top: 50px;
-      }
-
-      .section {
-        padding: 80px 0;
-      }
-
-      .section-label {
-        margin-bottom: 35px;
-      }
-
-      .about-title {
-        font-size: 32px;
-      }
-
-      .results-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .result-number {
-        font-size: 38px;
-      }
-
-      .experience-item,
-      .education-item {
-        grid-template-columns: 1fr;
-        gap: 18px;
-      }
-
-      .experience-content h3 {
-        font-size: 21px;
-      }
-
-      .experience-content li {
-        font-size: 14px;
-      }
-
-      .contact-content h2 {
-        font-size: 64px;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      * {
-        transition: none !important;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <header class="nav">
-    <div class="container nav-inner">
-      <a href="#" class="nav-logo">Cleo</a>
+  <!-- =========================
+       Navigation
+  ========================== -->
 
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li>
-            <button
-              class="theme-toggle"
-              id="themeToggle"
-              type="button"
-              aria-label="切换深色模式"
-            >
-              ◐
-            </button>
-          </li>
-        </ul>
+  <header class="navbar">
+
+    <div class="nav-inner">
+
+      <a href="#" class="brand">
+        <span class="brand-dot"></span>
+        陈雯静
+      </a>
+
+      <nav class="nav-links">
+        <a href="#about">关于我</a>
+        <a href="#results">成果</a>
+        <a href="#experience">经历</a>
+        <a href="#education">教育</a>
+        <a href="#skills">技能</a>
+        <a href="#contact">联系</a>
       </nav>
+
+      <button
+        class="theme-toggle"
+        id="themeToggle"
+        aria-label="切换深色模式"
+      >
+        ◐
+      </button>
+
     </div>
+
   </header>
+
 
   <main>
 
-    <!-- Hero -->
+    <!-- =========================
+         Hero
+    ========================== -->
 
     <section class="hero">
-      <div class="container hero-grid">
 
-        <div class="hero-content">
+      <div class="hero-grid">
 
-          <p class="eyebrow">SEO / GEO SPECIALIST</p>
+        <div class="hero-text">
 
-          <h1>Cleo</h1>
+          <div class="status">
+            <span class="status-dot"></span>
+            OPEN TO OPPORTUNITIES
+          </div>
 
-          <p class="hero-name">陈雯静</p>
-
-          <div class="hero-line"></div>
-
-          <p class="hero-title">SEO · GEO</p>
-
-          <p class="hero-description">
-            专注 Google SEO、内容策略与 GEO，
-            擅长通过数据、AI 工具和搜索意图分析，
-            提升自然搜索表现与品牌曝光。
+          <p class="hero-kicker">
+            SEO · GEO · AI SEARCH
           </p>
 
-          <div class="hero-status">
-            <span class="status-dot"></span>
-            <span>OPEN TO OPPORTUNITIES</span>
-          </div>
+          <h1>
+            陈雯静
+          </h1>
 
-        </div>
-
-        <div class="hero-card">
-
-          <p class="profile-label">PROFILE</p>
-
-          <p class="profile-year">2026</p>
-
-          <div class="profile-avatar">C</div>
-
-          <p class="profile-name">Cleo</p>
-
-          <p class="profile-role">SEO / GEO Specialist</p>
-
-          <div class="profile-tags">
-            <span class="profile-tag">SEO</span>
-            <span class="profile-tag">GEO</span>
-            <span class="profile-tag">CONTENT</span>
-            <span class="profile-tag">DATA</span>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- About -->
-
-    <section class="section" id="about">
-      <div class="container">
-
-        <p class="section-label">ABOUT</p>
-
-        <div class="about-grid">
-
-          <h2 class="about-title">
-            用搜索理解用户，
-            用内容获得增长。
+          <h2>
+            海外 SEO / GEO 专员
           </h2>
 
-          <p class="about-text">
-            我是 Cleo，一名 SEO / GEO Specialist，
-            主要负责 Google SEO、内容策略、GEO
-            以及搜索增长相关工作。
-            <br><br>
-            过去的工作中，我长期负责英文独立站 SEO
-            项目的内容策略与执行，熟悉关键词研究、
-            搜索意图分析、主题集群、内容优化、
-            外链建设以及数据分析。
-            <br><br>
-            同时持续探索 AI 工具、生成式搜索和
-            AI 搜索结果中的内容引用机制，
-            将 AI 融入内容生产、研究和 SEO 工作流程。
+          <p class="hero-intro">
+            专注 Google SEO、内容策略与生成式搜索优化。
+            擅长从关键词、搜索意图和用户需求出发，
+            构建可持续增长的内容体系。
+          </p>
+
+          <div class="hero-actions">
+
+            <a href="#experience" class="button primary">
+              查看工作经历
+              <span>↓</span>
+            </a>
+
+            <a href="#contact" class="button secondary">
+              联系我
+              <span>↗</span>
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="hero-profile">
+
+          <div class="profile-card">
+
+            <div class="profile-number">
+              01
+            </div>
+
+            <div class="profile-symbol">
+              SEO
+            </div>
+
+            <div class="profile-info">
+
+              <div>
+                <span>方向</span>
+                <strong>SEO / GEO</strong>
+              </div>
+
+              <div>
+                <span>语言</span>
+                <strong>中文 / English</strong>
+              </div>
+
+              <div>
+                <span>所在地</span>
+                <strong>中国 · 广州</strong>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         About
+    ========================== -->
+
+    <section id="about" class="section">
+
+      <div class="section-heading">
+
+        <span class="section-index">
+          01
+        </span>
+
+        <div>
+          <p class="section-label">
+            PROFILE
+          </p>
+
+          <h2>
+            关于我
+          </h2>
+        </div>
+
+      </div>
+
+
+      <div class="about-layout">
+
+        <div class="about-main">
+
+          <p class="large-text">
+            具备 2 年海外 SEO 运营经验，
+            主要负责 Google SEO、内容策略及 GEO 优化。
+          </p>
+
+          <p>
+            熟悉关键词研究、搜索意图分析、Topic Cluster、
+            SEO 内容优化、转化型页面优化及外链建设，
+            能够基于搜索数据和用户行为持续迭代策略。
+          </p>
+
+          <p>
+            具备 AI 搜索及生成式搜索内容优化经验，
+            能够将 AI 工具融入内容生产、搜索意图分析
+            和 GEO 优化流程。
           </p>
 
         </div>
 
-      </div>
-    </section>
 
-    <!-- Results -->
+        <div class="about-side">
 
-    <section class="section results-section">
-      <div class="container">
-
-        <p class="section-label">RESULTS</p>
-
-        <div class="results-grid">
-
-          <div>
-            <div class="result-number">150万+</div>
-            <div class="result-label">
-              GSC 年曝光
-            </div>
+          <div class="mini-item">
+            <span>01</span>
+            <p>Google SEO</p>
           </div>
 
-          <div>
-            <div class="result-number">9.5</div>
-            <div class="result-label">
-              GSC 平均排名
-            </div>
+          <div class="mini-item">
+            <span>02</span>
+            <p>GEO / AI Search</p>
           </div>
 
-          <div>
-            <div class="result-number">100+</div>
-            <div class="result-label">
-              英文 SEO 博客
-            </div>
+          <div class="mini-item">
+            <span>03</span>
+            <p>Content Strategy</p>
           </div>
 
-          <div>
-            <div class="result-number">30%</div>
-            <div class="result-label">
-              内容进入 Google 首页或 AIO
-            </div>
+          <div class="mini-item">
+            <span>04</span>
+            <p>Data-driven Growth</p>
           </div>
 
         </div>
 
       </div>
+
     </section>
 
-    <!-- Experience -->
 
-    <section class="section" id="experience">
-      <div class="container">
+    <!-- =========================
+         Results
+    ========================== -->
 
-        <p class="section-label">EXPERIENCE</p>
+    <section id="results" class="section results-section">
 
-        <div class="experience-item">
+      <div class="section-heading">
 
-          <div>
-            <p class="experience-date">2026.4 — 2026.7</p>
+        <span class="section-index">
+          02
+        </span>
 
-            <p class="experience-company">
-              睿魔智能科技有限公司
-            </p>
+        <div>
+          <p class="section-label">
+            RESULTS
+          </p>
 
-            <p class="experience-role">
-              海外 SEO 专员
-            </p>
+          <h2>
+            核心成果
+          </h2>
+        </div>
+
+      </div>
+
+
+      <div class="results-grid">
+
+        <div class="result-card">
+
+          <div class="result-top">
+            01
           </div>
+
+          <strong>
+            150万+
+          </strong>
+
+          <p>
+            GSC 年度曝光
+          </p>
+
+          <span>
+            工业零部件独立站 SEO 项目
+          </span>
+
+        </div>
+
+
+        <div class="result-card">
+
+          <div class="result-top">
+            02
+          </div>
+
+          <strong>
+            9.5
+          </strong>
+
+          <p>
+            平均搜索排名
+          </p>
+
+          <span>
+            Google Search Console
+          </span>
+
+        </div>
+
+
+        <div class="result-card">
+
+          <div class="result-top">
+            03
+          </div>
+
+          <strong>
+            100+
+          </strong>
+
+          <p>
+            英文 SEO 文章
+          </p>
+
+          <span>
+            单篇 1,500–3,000 词
+          </span>
+
+        </div>
+
+
+        <div class="result-card">
+
+          <div class="result-top">
+            04
+          </div>
+
+          <strong>
+            30%
+          </strong>
+
+          <p>
+            新内容进入 Google 首页 / AIO
+          </p>
+
+          <span>
+            SEO / GEO 内容项目
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         Experience
+    ========================== -->
+
+    <section id="experience" class="section">
+
+      <div class="section-heading">
+
+        <span class="section-index">
+          03
+        </span>
+
+        <div>
+          <p class="section-label">
+            EXPERIENCE
+          </p>
+
+          <h2>
+            工作经历
+          </h2>
+        </div>
+
+      </div>
+
+
+      <!-- Experience 01 -->
+
+      <article class="experience">
+
+        <div class="experience-date">
+          <span>
+            2026.04
+          </span>
+
+          <span>
+            2026.07
+          </span>
+        </div>
+
+
+        <div class="experience-body">
+
+          <div class="company-header">
+
+            <div>
+
+              <h3>
+                睿魔智能科技有限公司
+              </h3>
+
+              <p>
+                海外 SEO 专员
+              </p>
+
+            </div>
+
+            <span class="experience-number">
+              01
+            </span>
+
+          </div>
+
 
           <div class="experience-content">
 
-            <h3>海外 SEO / GEO</h3>
+            <div class="experience-highlight">
+              SEO / GEO 内容策略
+            </div>
 
             <ul>
+
               <li>
                 协同 Leader 推进一体式便携直播控台产品
-                SEO / GEO 内容策略搭建与落地，围绕核心关键词、
-                搜索意图及用户需求构建主题集群；累计产出
-                25 篇 SEO 博客，30% 的内容实现 Google 首页排名
-                或进入 AIO；优化 35 篇历史内容，单篇内容优化后
-                自然流量同比增长约 10%–90%。
+                SEO/GEO 内容策略搭建与落地，围绕核心关键词、
+                搜索意图及用户需求构建主题集群。
+              </li>
+
+              <li>
+                累计产出 <strong>25 篇 SEO 博客</strong>，
+                其中 <strong>30%</strong> 的内容实现
+                Google 首页排名或进入 AIO。
+              </li>
+
+              <li>
+                优化 <strong>35 篇历史内容</strong>，
+                单篇内容优化后自然流量同比增长约
+                <strong>10%–90%</strong>。
               </li>
 
               <li>
                 基于 AI Prompt、生成式搜索及用户搜索行为调研，
                 分析 AI 搜索结果、用户提问方式及内容引用偏好，
-                持续迭代 GEO 内容策略；推动核心内容获得主流
-                大模型引用，拓展品牌在 AI 搜索场景下的曝光及
-                内容引用入口。
+                持续迭代 GEO 内容策略。
               </li>
 
               <li>
                 持续跟踪关键词排名、自然流量、用户行为、
                 Google 算法及 AI 搜索结果，通过 A/B Test
-                等数据验证方式分析内容及页面优化方向，
-                并根据测试结果及数据反馈调整 SEO / GEO 策略。
+                分析内容及页面优化方向。
               </li>
 
               <li>
-                调研行业网站及外链资源，筛选并建联
-                30+ 个相关网站，成功获取 2 个高质量外链；
-                梳理并制定 3 套 SEO 工作 SOP，覆盖内容生产、
-                文章发布、内外链建设及内容策划，推动 SEO
-                工作流程标准化。
+                筛选并建联 <strong>30+ 个</strong>相关网站，
+                成功获取 <strong>2 个高质量外链</strong>，
+                并制定 3 套 SEO 工作 SOP。
               </li>
+
             </ul>
 
           </div>
 
         </div>
 
-        <div class="experience-item">
+      </article>
 
-          <div>
-            <p class="experience-date">2024.6 — 2026.3</p>
 
-            <p class="experience-company">
-              广州慢慢来信息科技有限公司
-            </p>
+      <!-- Experience 02 -->
 
-            <p class="experience-role">
-              谷歌 SEO 运营助理
-            </p>
+      <article class="experience">
+
+        <div class="experience-date">
+          <span>
+            2024.06
+          </span>
+
+          <span>
+            2026.03
+          </span>
+        </div>
+
+
+        <div class="experience-body">
+
+          <div class="company-header">
+
+            <div>
+
+              <h3>
+                广州慢慢来信息科技有限公司
+              </h3>
+
+              <p>
+                谷歌 SEO 运营助理
+              </p>
+
+            </div>
+
+            <span class="experience-number">
+              02
+            </span>
+
           </div>
+
 
           <div class="experience-content">
 
-            <h3>Google SEO 运营</h3>
+            <div class="experience-highlight">
+              独立站 SEO · 内容增长
+            </div>
 
             <ul>
+
               <li>
-                主导工业零部件独立站 SEO 内容策略搭建及执行，
-                针对 SEO 基础薄弱项目开展关键词调研、
-                搜索意图分析及主题集群规划，搭建内容架构；
-                一年内实现 GSC 150 万+ 曝光、平均排名 9.5，
+                主导工业零部件独立站 SEO 内容策略搭建与执行，
+                开展关键词调研、搜索意图分析及主题集群规划。
+              </li>
+
+              <li>
+                一年内实现
+                <strong>GSC 150 万+曝光</strong>，
+                平均排名 <strong>9.5</strong>，
                 询盘量持续逐月增长。
               </li>
 
               <li>
                 利用 AI 辅助规模化生产深度行业内容，
-                累计产出 100+ 篇 1,500–3,000 词英文博客，
-                并持续优化历史内容、TDK 及转化型页面；
-                内容获得主流大模型引用，成功转化多笔
+                累计产出 <strong>100+ 篇</strong>
+                1,500–3,000 词英文博客。
+              </li>
+
+              <li>
+                持续优化历史内容、TDK 及转化型页面，
+                内容获得主流大模型引用，并成功转化多笔
                 来自 ChatGPT 引荐的精准询盘。
               </li>
 
               <li>
-                持续监测关键词排名、用户访问行为及 Google
-                核心算法变化，根据数据反馈动态调整内容及
-                SEO 优化策略，在提升搜索表现的同时兼顾
-                用户体验与页面转化。
+                持续监测关键词排名、用户访问行为及
+                Google 核心算法变化，根据数据反馈动态
+                调整内容及 SEO 优化策略。
               </li>
 
               <li>
-                负责 3 个 SEO 运营项目的推进及交付，
-                超额完成合同约定的 Top 20、Top 100 关键词
-                及外链等核心 KPI；同时负责甲方日常数据答疑
-                及独立站常规技术问题处理。
+                负责 <strong>3 个 SEO 运营项目</strong>的推进
+                及交付，超额完成 Top 20、Top 100 关键词
+                及外链等核心 KPI。
               </li>
+
             </ul>
 
           </div>
 
         </div>
 
-      </div>
+      </article>
+
     </section>
 
-    <!-- Education -->
 
-    <section class="section">
-      <div class="container">
+    <!-- =========================
+         Education
+    ========================== -->
 
-        <p class="section-label">EDUCATION</p>
+    <section id="education" class="section">
 
-        <div class="education-item">
+      <div class="section-heading">
 
-          <p class="education-date">
-            2020.9 — 2024.6
+        <span class="section-index">
+          04
+        </span>
+
+        <div>
+          <p class="section-label">
+            EDUCATION
           </p>
 
-          <div>
-            <p class="education-school">
-              广州商学院
-            </p>
-
-            <p class="education-major">
-              英语专业
-            </p>
-          </div>
-
+          <h2>
+            教育背景
+          </h2>
         </div>
 
       </div>
+
+
+      <div class="education-card">
+
+        <div>
+
+          <p class="education-label">
+            2020.09 — 2024.06
+          </p>
+
+          <h3>
+            广州商学院
+          </h3>
+
+          <p>
+            英语专业 · 本科
+          </p>
+
+        </div>
+
+        <div class="education-symbol">
+          EN
+        </div>
+
+      </div>
+
     </section>
 
-    <!-- Skills -->
 
-    <section class="section" id="skills">
-      <div class="container">
+    <!-- =========================
+         Skills
+    ========================== -->
 
-        <p class="section-label">SKILLS</p>
+    <section id="skills" class="section">
 
-        <div class="skills-grid">
+      <div class="section-heading">
 
-          <div class="skill-group">
-            <h3>SEO Tools</h3>
-            <p>
-              GSC、Ahrefs、SEMRUSH、
-              WordPress、Elementor
-            </p>
-          </div>
+        <span class="section-index">
+          05
+        </span>
 
-          <div class="skill-group">
-            <h3>AI & Research</h3>
-            <p>
-              AI 工具、AI Prompt、生成式搜索、
-              用户搜索行为分析、内容研究
-            </p>
-          </div>
+        <div>
+          <p class="section-label">
+            SKILLS
+          </p>
 
-          <div class="skill-group">
-            <h3>Language & Certificates</h3>
-            <p>
-              大学英语六级、英语专业八级、
-              计算机一级、初中英语教资
-              <br><br>
-              英语可作为工作语言，日常口语流利。
-            </p>
-          </div>
-
-        </div>
-
-        <div class="skills-grid" style="margin-top: 50px;">
-
-          <div class="skill-group">
-            <h3>English</h3>
-            <p>
-              熟悉地道英语表达与互联网流行文化，
-              经常活跃于海外主流社媒平台。
-            </p>
-          </div>
-
-          <div class="skill-group">
-            <h3>User Insight</h3>
-            <p>
-              信息判断和搜集能力强，
-              善于通过搜索行为和数据分析用户需求。
-            </p>
-          </div>
-
-          <div class="skill-group">
-            <h3>Workflow</h3>
-            <p>
-              将 AI 工具融入日常 SEO 工作流，
-              持续提升内容研究与生产效率。
-            </p>
-          </div>
-
+          <h2>
+            专业技能
+          </h2>
         </div>
 
       </div>
+
+
+      <div class="skills-layout">
+
+
+        <div class="skill-block">
+
+          <p class="skill-number">
+            01
+          </p>
+
+          <h3>
+            SEO
+          </h3>
+
+          <div class="tags">
+
+            <span>关键词研究</span>
+            <span>搜索意图分析</span>
+            <span>Topic Cluster</span>
+            <span>内容策略</span>
+            <span>TDK 优化</span>
+            <span>页面优化</span>
+            <span>外链建设</span>
+
+          </div>
+
+        </div>
+
+
+        <div class="skill-block">
+
+          <p class="skill-number">
+            02
+          </p>
+
+          <h3>
+            GEO / AI Search
+          </h3>
+
+          <div class="tags">
+
+            <span>GEO</span>
+            <span>AI Search</span>
+            <span>Prompt</span>
+            <span>生成式搜索</span>
+            <span>AI 内容工作流</span>
+
+          </div>
+
+        </div>
+
+
+        <div class="skill-block">
+
+          <p class="skill-number">
+            03
+          </p>
+
+          <h3>
+            数据 & 工具
+          </h3>
+
+          <div class="tags">
+
+            <span>Google Search Console</span>
+            <span>Ahrefs</span>
+            <span>SEMrush</span>
+            <span>WordPress</span>
+            <span>Elementor</span>
+
+          </div>
+
+        </div>
+
+
+        <div class="skill-block">
+
+          <p class="skill-number">
+            04
+          </p>
+
+          <h3>
+            语言能力
+          </h3>
+
+          <div class="tags">
+
+            <span>英语专业八级</span>
+            <span>英语工作语言</span>
+            <span>日常口语流利</span>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
     </section>
 
-    <!-- Contact -->
 
-    <section class="section contact-section" id="contact">
-      <div class="container">
+    <!-- =========================
+         Certificates
+    ========================== -->
 
-        <div class="contact-content">
+    <section class="section">
 
-          <p class="section-label">CONTACT</p>
+      <div class="section-heading">
 
-          <h2>Let's connect.</h2>
+        <span class="section-index">
+          06
+        </span>
 
-          <a
-            href="mailto:logbox46@gmail.com"
-            class="contact-link"
-          >
-            logbox46@gmail.com
-          </a>
+        <div>
+
+          <p class="section-label">
+            CERTIFICATES
+          </p>
+
+          <h2>
+            技能证书
+          </h2>
 
         </div>
 
       </div>
+
+
+      <div class="certificate-grid">
+
+        <div>
+          <span>01</span>
+          <strong>英语专业八级</strong>
+        </div>
+
+        <div>
+          <span>02</span>
+          <strong>大学英语六级</strong>
+        </div>
+
+        <div>
+          <span>03</span>
+          <strong>计算机一级</strong>
+        </div>
+
+        <div>
+          <span>04</span>
+          <strong>初中英语教师资格证</strong>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         Contact
+    ========================== -->
+
+    <section id="contact" class="section contact-section">
+
+      <div class="contact-box">
+
+        <p class="section-label">
+          CONTACT
+        </p>
+
+        <h2>
+          Let's connect.
+        </h2>
+
+        <a
+          href="mailto:logbox46@gmail.com"
+          class="contact-email"
+        >
+          logbox46@gmail.com
+          <span>↗</span>
+        </a>
+
+      </div>
+
     </section>
 
   </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
 
-      <span>Cleo · SEO / GEO Specialist</span>
+  <!-- =========================
+       Footer
+  ========================== -->
 
-      <span>© 2026</span>
+  <footer>
 
+    <div>
+      陈雯静 · 海外 SEO / GEO
     </div>
+
+    <div>
+      © 2026
+    </div>
+
   </footer>
 
-  <script>
-    const themeToggle = document.getElementById("themeToggle");
 
-    const savedTheme = localStorage.getItem("theme");
+  <!-- =========================
+       Dark Mode
+  ========================== -->
+
+  <script>
+
+    const toggle =
+      document.getElementById("themeToggle");
+
+    const savedTheme =
+      localStorage.getItem("theme");
 
     if (savedTheme === "dark") {
-      document.documentElement.setAttribute("data-theme", "dark");
+      document.body.classList.add("dark");
     }
 
-    themeToggle.addEventListener("click", function () {
-      const currentTheme =
-        document.documentElement.getAttribute("data-theme");
+    toggle.addEventListener("click", () => {
 
-      if (currentTheme === "dark") {
-        document.documentElement.removeAttribute("data-theme");
-        localStorage.setItem("theme", "light");
-      } else {
-        document.documentElement.setAttribute("data-theme", "dark");
-        localStorage.setItem("theme", "dark");
-      }
+      document.body.classList.toggle("dark");
+
+      const isDark =
+        document.body.classList.contains("dark");
+
+      localStorage.setItem(
+        "theme",
+        isDark ? "dark" : "light"
+      );
+
     });
+
   </script>
 
 </body>
