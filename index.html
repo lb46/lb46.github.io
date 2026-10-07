@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Cleo Chen| 陈雯静</title>
+  <title>Cleo Chen | 陈雯静</title>
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   
@@ -164,15 +164,44 @@
       color: var(--text);
     }
 
-    .theme-toggle {
-      border: 0;
-      background: transparent;
-      color: var(--text);
-      cursor: pointer;
-      font-family: inherit;
-      font-size: 16px;
-      padding: 6px;
-    }
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+
+  border: 0;
+  background: transparent;
+  color: var(--text);
+
+  cursor: pointer;
+  padding: 5px;
+}
+
+.theme-icon {
+  width: 17px;
+  height: 17px;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sun-icon {
+  display: none;
+}
+
+[data-theme="dark"] .moon-icon {
+  display: none;
+}
+
+[data-theme="dark"] .sun-icon {
+  display: block;
+}
 
     /* Hero */
 
@@ -685,14 +714,28 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
         <li>
-          <button
-            class="theme-toggle"
-            id="themeToggle"
-            type="button"
-            aria-label="切换深色模式"
-          >
-            ◐
-          </button>
+<button
+  class="theme-toggle"
+  id="themeToggle"
+  type="button"
+  aria-label="切换深色模式"
+>
+  <svg class="theme-icon moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.7 6.7 0 0 0 21 12.8Z"></path>
+  </svg>
+
+  <svg class="theme-icon sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+    <circle cx="12" cy="12" r="4"></circle>
+    <path d="M12 2v2"></path>
+    <path d="M12 20v2"></path>
+    <path d="m4.93 4.93 1.41 1.41"></path>
+    <path d="m17.66 17.66 1.41 1.41"></path>
+    <path d="M2 12h2"></path>
+    <path d="M20 12h2"></path>
+    <path d="m6.34 17.66-1.41 1.41"></path>
+    <path d="m19.07 4.93-1.41 1.41"></path>
+  </svg>
+</button>
         </li>
       </ul>
     </nav>
