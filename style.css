@@ -136,13 +136,19 @@ button {
 .nav-logo {
   display: flex;
   align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+
+  font-size: 23px;
+  line-height: 1;
+
+  transition: opacity 0.2s ease;
 }
 
-.nav-logo img {
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
-  display: block;
+.nav-logo:hover {
+  opacity: 0.65;
 }
 
 .nav-links {
