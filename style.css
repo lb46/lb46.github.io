@@ -357,6 +357,29 @@ button {
 }
 
 
+/* ---------- Profile Info ---------- */
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  margin-top: 24px;
+  padding-top: 20px;
+
+  border-top: 1px solid var(--line);
+}
+
+.profile-info p {
+  margin: 0;
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+
 /* ---------- Section Heading ---------- */
 
 .section-heading {
@@ -559,72 +582,44 @@ button {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 0;
-
-  border-top: 1px solid var(--line);
-  border-left: 1px solid var(--line);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
-.skill-block {
-  min-height: 310px;
+.skill-group {
+  min-height: 220px;
 
   padding: 32px;
 
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+
+  background: var(--bg);
+
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
 }
 
-.skill-block h3 {
-  margin: 0 0 28px;
-
-  font-size: 15px;
-  font-weight: 500;
+.skill-group:hover {
+  border-color: var(--text-muted);
 }
 
-.skill-block p {
+.skill-group h3 {
   margin: 0 0 18px;
+
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.skill-group p {
+  margin: 0;
 
   color: var(--text-secondary);
 
   font-size: 14px;
   line-height: 1.9;
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.tags span {
-  padding: 7px 11px;
-
-  border: 1px solid var(--line);
-  border-radius: 100px;
-
-  color: var(--text-secondary);
-
-  font-size: 11px;
-}
-
-.certificate-list {
-  display: flex;
-  flex-direction: column;
-}
-
-.certificate-list div {
-  padding: 13px 0;
-
-  border-bottom: 1px solid var(--line);
-
-  color: var(--text-secondary);
-
-  font-size: 13px;
-}
-
-.certificate-list div:first-child {
-  border-top: 1px solid var(--line);
 }
 
 
@@ -723,7 +718,7 @@ button {
   }
 
   .skills-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .experience-item,
@@ -821,7 +816,12 @@ button {
     padding: 40px 0;
   }
 
-  .skill-block {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .skill-group {
     min-height: auto;
     padding: 28px;
   }
