@@ -141,10 +141,11 @@ button {
   width: 42px;
   height: 42px;
 
-  font-size: 24px;
+  font-size: 28px;
   line-height: 1;
 
   transition: opacity 0.2s ease;
+  transform: scale(1.35);
 }
 
 .nav-logo:hover {
@@ -389,12 +390,12 @@ button {
 .profile-info {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
 
   width: 100%;
 
-  margin-top: 18px;
-  padding-top: 16px;
+  margin-top: 24px;
+  padding-top: 20px;
 
   border-top: 1px solid var(--line);
 }
@@ -405,7 +406,7 @@ button {
   color: var(--text-secondary);
 
   font-size: 12px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 
@@ -474,6 +475,9 @@ button {
 .results-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
 }
 
 .result-card {
@@ -483,6 +487,9 @@ button {
 
   display: flex;
   flex-direction: column;
+
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 .result-number {
