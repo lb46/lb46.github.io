@@ -700,11 +700,16 @@
         font-size: 64px;
       }
 
-          .contact-links {
-        gap: 8px;
-        font-size: 15px;
-      }
-      
+    .contact-links {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+      font-size: 15px;
+    }
+    
+    .contact-links .contact-separator {
+      display: none;
+    }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1040,7 +1045,7 @@
 <div class="contact-links">
   <a href="mailto:logbox46@gmail.com">📧 logbox46@gmail.com</a>
   <span class="contact-separator">·</span>
-  <span>📱/💬 18319404390</span>
+  <span>📱 / 💬 18319404390</span>
 </div>
 
         </div>
