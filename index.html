@@ -556,6 +556,110 @@
   line-height: 1.9;
 }
 
+    /* Thesis Modal */
+
+.thesis-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.thesis-link:hover {
+  opacity: 0.55;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  position: relative;
+  width: min(680px, 100%);
+  max-height: min(80vh, 620px);
+  overflow-y: auto;
+  padding: 42px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--text);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  transform: translateY(12px);
+  transition: transform 0.2s ease;
+}
+
+.modal-overlay.active .modal {
+  transform: translateY(0);
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+  color: var(--text);
+}
+
+.modal-label {
+  margin-bottom: 22px;
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+.modal-text {
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 2;
+}
+
+@media (max-width: 650px) {
+  .modal-overlay {
+    padding: 16px;
+  }
+
+  .modal {
+    max-height: 82vh;
+    padding: 34px 26px 30px;
+  }
+
+  .modal-text {
+    font-size: 15px;
+    line-height: 1.9;
+  }
+}
+
     /* Contact */
 
     .contact-section {
@@ -1024,7 +1128,7 @@
     <h3>英语专业</h3>
 
     <p class="education-project-text">
-      以翻译实践为毕业论文方向，围绕英文文本理解、信息提取与语言转换展开研究与实践，进一步强化英文阅读、写作及跨语言信息处理能力。
+以<a href="#" class="thesis-link" id="thesisLink">翻译实践</a>为毕业论文方向，围绕英文文本理解、信息提取与语言转换展开研究与实践，进一步强化英文阅读、写作及跨语言信息处理能力。
     </p>
   </div>
 
@@ -1104,34 +1208,116 @@
 
   </main>
 
-<footer class="footer">
+  <!-- Thesis Modal -->
+
+  <div class="modal-overlay" id="thesisModal">
+    <div
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="thesisModalTitle"
+    >
+
+      <button
+        class="modal-close"
+        id="modalClose"
+        type="button"
+        aria-label="关闭"
+      >
+        ×
+      </button>
+
+      <p class="modal-label" id="thesisModalTitle">
+        毕业论文
+      </p>
+
+      <p class="modal-text">
+        本篇报告以彼得·纽马克（Peter Newmark）的语义翻译与交际翻译理论为指导框架，针对我所选取的当代散文《过去的海》中结构统一但语义丰富多样的“是”字句进行了系统的分类探讨与翻译实践；在成果方面，我通过灵活运用减译、变序、转换、合译与替换等翻译技巧，成功克服了中英句法结构及思维模式的差异，不仅准确保留了原著的情感内涵与文学风格，还显著提升了译文的可读性与流畅度，为中国当代文学散文的英译及文化传播做出了积极尝试。
+      </p>
+
+    </div>
+  </div>
+
+  <footer class="footer">
   <div class="container footer-inner">
     <span>© CC 2026</span>
   </div>
 </footer>
 
-  <script>
-    const themeToggle = document.getElementById("themeToggle");
-
-    const savedTheme = localStorage.getItem("theme");
-
-    if (savedTheme === "dark") {
-      document.documentElement.setAttribute("data-theme", "dark");
-    }
-
-    themeToggle.addEventListener("click", function () {
-      const currentTheme =
-        document.documentElement.getAttribute("data-theme");
-
-      if (currentTheme === "dark") {
-        document.documentElement.removeAttribute("data-theme");
-        localStorage.setItem("theme", "light");
-      } else {
-        document.documentElement.setAttribute("data-theme", "dark");
-        localStorage.setItem("theme", "dark");
-      }
-    });
-  </script>
+          <script>
+        const themeToggle = document.getElementById("themeToggle");
+        
+        const savedTheme = localStorage.getItem("theme");
+        
+        if (savedTheme === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+        
+        themeToggle.addEventListener("click", function () {
+          const currentTheme =
+            document.documentElement.getAttribute("data-theme");
+        
+          if (currentTheme === "dark") {
+            document.documentElement.removeAttribute("data-theme");
+            localStorage.setItem("theme", "light");
+          } else {
+            document.documentElement.setAttribute("data-theme", "dark");
+            localStorage.setItem("theme", "dark");
+          }
+        });
+        
+        
+        /* Thesis Modal */
+        
+        const thesisLink = document.getElementById("thesisLink");
+        const thesisModal = document.getElementById("thesisModal");
+        const modalClose = document.getElementById("modalClose");
+        
+        
+        function openThesisModal() {
+          thesisModal.classList.add("active");
+          document.body.style.overflow = "hidden";
+        }
+        
+        
+        function closeThesisModal() {
+          thesisModal.classList.remove("active");
+          document.body.style.overflow = "";
+        }
+        
+        
+        /* 点击“翻译实践”打开弹窗 */
+        
+        thesisLink.addEventListener("click", function (event) {
+          event.preventDefault();
+          openThesisModal();
+        });
+        
+        
+        /* 点击右上角 × 关闭 */
+        
+        modalClose.addEventListener("click", function () {
+          closeThesisModal();
+        });
+        
+        
+        /* 点击弹窗外面的空白区域关闭 */
+        
+        thesisModal.addEventListener("click", function (event) {
+          if (event.target === thesisModal) {
+            closeThesisModal();
+          }
+        });
+        
+        
+        /* 按 ESC 键关闭 */
+        
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            closeThesisModal();
+          }
+        });
+        </script>
 
 </body>
 </html>
