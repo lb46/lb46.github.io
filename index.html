@@ -560,6 +560,57 @@
       opacity: 0.55;
     }
 
+    .contact-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.wechat-link {
+  display: inline-block;
+  padding: 0 0 6px;
+
+  border: 0;
+  border-bottom: 1px solid var(--text);
+
+  background: transparent;
+  color: var(--text);
+
+  font-family: inherit;
+  font-size: 18px;
+
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.wechat-link:hover {
+  opacity: 0.55;
+}
+
+.wechat-qr {
+  display: none;
+  margin-top: 32px;
+}
+
+.wechat-qr.show {
+  display: block;
+}
+
+.wechat-qr img {
+  display: block;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+}
+
+.wechat-qr p {
+  margin-top: 10px;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
     /* Footer */
 
     .footer {
@@ -1016,12 +1067,27 @@
 
           <h2>Let's connect.</h2>
 
-          <a
-            href="mailto:logbox46@gmail.com"
-            class="contact-link"
-          >
-            logbox46@gmail.com
-          </a>
+ <a
+    href="mailto:logbox46@gmail.com"
+    class="contact-link"
+  >
+    logbox46@gmail.com
+  </a>
+
+  <button
+    class="wechat-link"
+    id="wechatButton"
+    type="button"
+  >
+    WeChat
+  </button>
+
+</div>
+
+<div class="wechat-qr" id="wechatQr">
+  <img src="wechat-qr.jpg" alt="Cleo 微信二维码">
+  <p>扫码添加微信</p>
+</div>
 
         </div>
 
@@ -1057,6 +1123,13 @@
         localStorage.setItem("theme", "dark");
       }
     });
+
+    const wechatButton = document.getElementById("wechatButton");
+const wechatQr = document.getElementById("wechatQr");
+
+wechatButton.addEventListener("click", function () {
+  wechatQr.classList.toggle("show");
+});
   </script>
 
 </body>
