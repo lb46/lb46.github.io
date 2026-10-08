@@ -643,17 +643,21 @@
         height: 64px;
       }
 
-.nav-center {
-  display: block;
-}
-
-.nav-name {
-  display: block;
-}
-
-.nav-links {
-  display: none;
-}
+      .nav-center {
+        display: block;
+      }
+      
+      .nav-name {
+        display: block;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+            .nav-logo {
+        pointer-events: none;
+      }
+      
       .hero {
         padding: 80px 0;
       }
@@ -746,12 +750,14 @@
 <header class="nav">
   <div class="container nav-inner">
 
-    <a href="#" class="nav-logo" aria-label="Cleo">
+    <a href="#" class="nav-logo" aria-label="返回首页">
       📓
     </a>
 
     <nav class="nav-center">
-      <span class="nav-name">Cleo</span>
+  <a href="#" class="nav-name" aria-label="返回首页">
+    Cleo
+  </a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
