@@ -144,7 +144,16 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
-    
+
+    .nav-name {
+  display: none;
+  color: var(--text);
+  font-size: 20px;
+  line-height: 0.85;
+  letter-spacing: -0.075em;
+  font-weight: 700;
+}
+
 .nav-logo img {
   display: block;
   width: 28px;
@@ -635,6 +644,14 @@
       }
 
 .nav-center {
+  display: block;
+}
+
+.nav-name {
+  display: block;
+}
+
+.nav-links {
   display: none;
 }
       .hero {
@@ -734,6 +751,7 @@
     </a>
 
     <nav class="nav-center">
+      <span class="nav-name">Cleo</span>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
